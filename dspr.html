@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostima</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: auto 30px;
+            margin-top: 30px;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Source Code Pro", monospace;
+            font-optical-sizing: auto;
+            font-style: normal;
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        .container {
+            max-width: 600px;
+        }
+
+        .container-large {
+            max-width: 800px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .container-large {
+                max-width: 100%;
+            }
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        a {
+            color: #0066cc;
+        }
+
+        ul {
+            padding-left: 25px;
+            margin: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        table caption {
+            caption-side: top;
+            margin-bottom: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f9f9f9;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f3f3f3;
+        }
+
+        tr.recommended {
+            background-color: #d4edda;
+            font-weight: bold;
+            border-top: 2px solid #28a745;
+        }
+
+        tr.line-seperator td {
+            border: none;
+            height: 0px;
+            background-color: transparent;
+            padding: 0;
+        }
+
+        span {
+            border-bottom: 1px dotted #333;
+            cursor: help;
+        }
+
+        .features-info {
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-large">
+        <h1>Mostima - DeepSeek Model Provider Rankings</h1>
+        <br />
+        <p>
+            - <b>What is this?</b><br />
+            It's a table that ranks various api providers that hosted DeepSeek model. The goal is to find the best provider that can save money while maintaining good quality.
+            <br /><br />
+            - <b>So it's yet another leaderboard?</b><br />
+            Perhaps, yes. Just a simple one without too many academic metrics.
+            <br /><br />
+            - <b>Who is this for?</b><br />
+            I created this mainly for myself, but the goal is to find cheapest provider for my creative writing needs and roleplay scenarios.
+            <br /><br />
+            - <b>How often do this get updated?</b><br />
+            Whenever I have time to do so. You can help by submitting a PR on <a href="https://github.com/0zl/mostima">GitHub</a>.
+            <br /><br />
+            - <b>How do I read this?</b><br />
+            Each provider is ranked by a score that I calculated based on input/output price, precision/quality, and features. The higher the score, the better.
+        </p>
+        <hr />
+        <h3>Jump Links:</h3>
+        <ul>
+            <li><a href="#t1">Model: DeepSeek-V3-0324</a></li>
+            <li><a href="#t2">Model: DeepSeek-R1-0528</a></li>
+            <li><a href="#faq">Some FAQ</a></li>
+        </ul>
+        <hr />
+        <noscript><b><i>You need to use a browser that support JavaScript.</i></b></noscript>
+        <div id="t1">
+            <table>
+                <caption><b>DeepSeek-V3-0324</b></caption>
+                <thead>
+                    <tr>
+                        <th>Provider</th>
+                        <th>Score</th>
+                        <th>Input</th>
+                        <th>Output</th>
+                        <th>Precision</th>
+                        <th>Features</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="6" style="text-align: center;">Loading...</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Features Info:</h3>
+            <ul class="features-info"></ul>
+        </div>
+        <hr />
+        <div id="t2">
+            <table>
+                <caption><b>DeepSeek-R1-0528</b></caption>
+                <thead>
+                    <tr>
+                        <th>Provider</th>
+                        <th>Score</th>
+                        <th>Input</th>
+                        <th>Output</th>
+                        <th>Precision</th>
+                        <th>Features</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="6" style="text-align: center;">Loading...</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Features Info:</h3>
+            <ul class="features-info"></ul>
+        </div>
+        <hr />
+        <div id="faq">
+            <h3>Some FAQs:</h3>
+            <ul>
+                <li><b>Q:</b> Why did you not include OpenRouter?</li>
+                <li><b>A:</b> I prefer using the API directly from the provider rather than through a rotating proxy or similar intermediary, as it sometimes offers better pricing.</li>
+                <br />
+                <li><b>Q:</b> Why did you not include Chutes?</li>
+                <li><b>A:</b> Chutes pricing is monthly based with the cheapest plan only gives you 300 requests per day. But, you can try Chutes if you want.</li>
+                <br />
+                <li><b>Q:</b> How do you determine the quality/precision score?</li>
+                <li><b>A:</b> It's based on my own experience and some rough tests and simple observations. It's good enough for my needs.</li>
+                <br />
+                <li><b>Q:</b> Where can I find the score for each quantization type?</li>
+                <li><b>A:</b> You can find the scores in the YAML files for each model version on <a href="https://github.com/0zl/mostima">GitHub</a>.</li>
+                <br />
+                <li><b>Q:</b> Why is provider X not listed?</li>
+                <li><b>A:</b> I only include providers that I know of and have pricing info available. If you know any other providers, you can submit a PR on <a href="https://github.com/0zl/mostima">GitHub</a>.</li>
+                <br />
+                <li><b>Q:</b> Why I can't register for SiliconFlow account?</li>
+                <li><b>A:</b> SiliconFlow is a China-based provider which some phone number countries can't receive their SMS verification code.</li>
+            </ul>
+        </div>
+        <br /><br />
+    </div>
+
+    <script type="module">
+        import { parse } from 'https://cdn.jsdelivr.net/npm/yaml@2.8.1/browser/index.min.js';
+
+        async function fetchYAML(url) {
+            const response = await fetch(url);
+            const text = await response.text();
+            return parse(text);
+        }
+
+        // ----- //
+
+        const data = {
+            v3_0324: await fetchYAML('/dspr/v3-0324.yaml'),
+            r1_0528: await fetchYAML('/dspr/r1-0528.yaml')
+        }
+
+        const calculated = {
+            v3_0324: [],
+            r1_0528: []
+        }
+
+        // ----- //
+
+        function getQualityScore(quant, type) {
+            return data[type].definitions.quality[quant] || 0;
+        }
+
+        function getFeatureScore(feature, type) {
+            return data[type].definitions.features.find(f => f.tag === feature)?.score || 0;
+        }
+
+        function getMaxFeatureScore(type) {
+            const groups = {};
+            for (const feature of data[type].definitions.features) {
+                if (!feature.group) continue;
+                if (!groups[feature.group]) {
+                    groups[feature.group] = feature.score;
+                } else {
+                    groups[feature.group] = Math.max(groups[feature.group], feature.score);
+                }
+            }
+            return groups;
+        }
+
+        function getFeatureDescFromTag(tag, type) {
+            return data[type].definitions.features.find(f => f.tag === tag)?.desc || null;
+        }
+        
+        // ----- //
+
+        async function calcScoresStep1(provider, type) {
+            const config = data[type].config;
+            const blendedPrice = (provider.pricing.input * config.io_ratio.input) + (provider.pricing.output * config.io_ratio.output);
+            const qualityAdjustedPrice = blendedPrice / getQualityScore(provider.quant, type);
+            calculated[type].push({
+                blendedPrice, qualityAdjustedPrice, provider
+            });
+        }
+
+        async function calcScoresStep2(type) {
+            const config = data[type].config;
+            const bestValue = Math.min(...calculated[type].map(p => p.qualityAdjustedPrice));
+            const maxFeatureScore = getMaxFeatureScore(type);
+            const maxFeatureScoreTotal = Object.values(maxFeatureScore).reduce((a, b) => a + b, 0);
+            
+            for (const entry of calculated[type]) {
+                const finalCostScore = bestValue / entry.qualityAdjustedPrice;
+                
+                let totalFeatureScore = 0;
+                for (const featureTag of entry.provider.features) {
+                    totalFeatureScore += getFeatureScore(featureTag, type);
+                }
+
+                const finalFeatureScore = (totalFeatureScore / maxFeatureScoreTotal) || 0;
+                entry.finalFeatureScore = finalFeatureScore;
+
+                const finalScore = (finalCostScore * config.weights.cost_vs_quality) + (finalFeatureScore * config.weights.features);
+                entry.finalScore = parseFloat(finalScore.toFixed(3));
+            }
+        }
+
+        // ----- //
+
+        async function calcTable(id, type) {
+            for (const provider of data[type].providers) {
+                await calcScoresStep1(provider, type);
+            }
+
+            await calcScoresStep2(type);
+
+            calculated[type].sort((a, b) => b.finalScore - a.finalScore);
+            const tbody = document.querySelector(`#${id} table tbody`);
+            tbody.innerHTML = '';
+
+            for (let i = 0; i < calculated[type].length; i++) {
+                const entry = calculated[type][i];
+                const tr = document.createElement('tr');
+                if (i === 0) tr.classList.add('recommended');
+
+                tr.innerHTML = `
+                    <td><a href="${entry.provider.url}" target="_blank">${entry.provider.name}</a></td>
+                    <td>${entry.finalScore.toFixed(3)}</td>
+                    <td>$${entry.provider.pricing.input.toFixed(2)}</td>
+                    <td>$${entry.provider.pricing.output.toFixed(2)}</td>
+                    <td>${entry.provider.quant}</td>
+                    <td>${entry.provider.features.filter((v, i, a) => a.indexOf(v) === i).map(f => `<span title="${getFeatureDescFromTag(f, type)}">${f}</span>`).join(', ') || ''}</td>
+                `;
+
+                tbody.appendChild(tr);
+
+                if (i < calculated[type].length - 1) {
+                    const sepTr = document.createElement('tr');
+                    sepTr.classList.add('line-seperator');
+                    sepTr.innerHTML = `<td colspan="6"></td>`;
+                    tbody.appendChild(sepTr);
+                }
+            }
+        }
+
+        async function showFeaturesInfo(id, type) {
+            const container = document.querySelector(`#${id} .features-info`);
+            container.innerHTML = '';
+
+            for (const feature of data[type].definitions.features) {
+                const li = document.createElement('li');
+                li.innerHTML = `<b>${feature.tag}</b>: ${feature.desc}`;
+                container.appendChild(li);
+            }
+        }
+
+        // ----- //
+
+        await calcTable('t1', 'v3_0324');
+        await showFeaturesInfo('t1', 'v3_0324');
+
+        await calcTable('t2', 'r1_0528');
+        await showFeaturesInfo('t2', 'r1_0528');
+    </script>
+</body>
+
+</html>

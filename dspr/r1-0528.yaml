@@ -1,0 +1,140 @@
+﻿config:
+    weights:
+        cost_vs_quality: 0.6
+        features: 0.4
+    io_ratio:
+        input: 0.75
+        output: 0.25
+
+definitions:
+    quality:
+        fp32: 1.00
+        bf16: 0.98
+        fp16: 0.98
+        qat: 0.93
+        fp8: 0.86
+        int8: 0.85
+        q6_k: 0.78
+        unknown: 0.70
+        q5_k: 0.53   
+        fp4: 0.53     
+        awq: 0.42      
+        gptq: 0.41     
+        hqq: 0.41      
+        nf4: 0.32
+        q4_k: 0.30
+        q3_k: 0.20
+        spqr: 0.20
+        q2_k: 0.10
+        bit1: 0.10
+    features:
+        - tag: Caching
+          group: Caching
+          name: Prompt / Context Caching
+          desc: Cache and re-use previous prompt context with discounted price.
+          score: 1.2
+        - tag: LargeContext
+          group: Context
+          name: Large Context Window (>100k)
+          desc: Support for very large context windows.
+          score: 1.2
+
+providers:
+    - name: Parasail
+      url: https://parasail.io/
+      quant: fp8
+      pricing:
+        input: 0.79
+        output: 4.00
+      features: [LargeContext]
+    - name: Hyperbolic
+      url: https://www.hyperbolic.ai/
+      quant: fp8
+      pricing:
+        input: 3.00
+        output: 3.00
+      features: [LargeContext]
+    - name: Nebius
+      url: https://nebius.com/
+      quant: fp8
+      pricing:
+        input: 0.80
+        output: 2.40
+      features: [LargeContext]
+    - name: Firework AI
+      url: https://fireworks.ai/
+      quant: fp8
+      pricing:
+        input: 3.00
+        output: 8.00
+      features: [LargeContext]
+    - name: deepinfra
+      url: https://deepinfra.com/
+      quant: fp4
+      pricing:
+        input: 0.50
+        output: 2.15
+      features: [Caching, LargeContext]
+    - name: Novita AI
+      url: https://novita.ai/
+      quant: fp8
+      pricing:
+        input: 0.70
+        output: 2.5
+      features: [LargeContext]
+    - name: TogetherAI
+      url: https://www.together.ai/
+      quant: fp8
+      pricing:
+        input: 3.00
+        output: 7.00
+      features: [LargeContext]
+    - name: Replicate
+      url: https://replicate.com/
+      quant: unknown
+      pricing:
+        input: 3.75
+        output: 10.00
+      features: [LargeContext]
+    - name: SiliconFlow
+      url: https://siliconflow.cn/
+      quant: fp8
+      pricing:
+        input: 0.56
+        output: 2.25
+      features: [LargeContext]
+    - name: Targon
+      url: https://targon.com/
+      quant: fp8
+      pricing:
+        input: 0.50
+        output: 2.00
+      features: [LargeContext]
+    - name: GMI
+      url: https://gmicloud.ai/
+      quant: fp8
+      pricing:
+        input: 0.80
+        output: 2.30
+      features: [LargeContext]
+    - name: Atlas Cloud
+      url: https://www.atlascloud.ai/
+      quant: fp8
+      pricing:
+        input: 0.45
+        output: 2.15
+      features: [LargeContext]
+    - name: Baseten
+      url: https://www.baseten.co/
+      quant: fp8
+      pricing:
+        input: 2.55
+        output: 5.95
+      features: [LargeContext]
+    - name: RedPill (TEE)
+      url: https://redpill.ai/
+      quant: fp8
+      pricing:
+        input: 7.00
+        output: 7.00
+      features: [LargeContext]
