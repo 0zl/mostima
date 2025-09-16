@@ -157,8 +157,6 @@
             <li><a href="#t2">Model: DeepSeek-R1-0528</a></li>
             <li><a href="#faq">Some FAQ</a></li>
         </ul>
-        <br />
-        <p>Last updated: <span id="last-updated">Loading...</span></p>
         <hr />
         <noscript><b><i>You need to use a browser that support JavaScript.</i></b></noscript>
         <div id="t1">
@@ -247,39 +245,17 @@
             return parse(text);
         }
 
-        async function getRepoLastCommitUpdateDate() {
-            const cached = localStorage.getItem('dspr_last_update');
-            const cachedExpiry = localStorage.getItem('dspr_last_update_expiry');
-
-            if (cached && cachedExpiry && new Date(cachedExpiry) > new Date()) {
-                return cached;
-            }
-
-            const url = 'https://api.github.com/repos/0zl/mostima/commits';
-            const response = await fetch(url);
-            const commits = await response.json();
-            const date = new Date(commits[0].commit.author.date);
-            const str = date.toISOString().split('T')[0];
-
-            localStorage.setItem('dspr_last_update', str);
-            localStorage.setItem('dspr_last_update_expiry', addMinutes(new Date(), 60).toISOString());
-
-            return str;
-        }
-
         // ----- //
 
         const data = {
-            v3_0324: await fetchYAML('https://cdn.jsdelivr.net/gh/0zl/mostima@master/dspr/v3-0324.yaml'),
-            r1_0528: await fetchYAML('https://cdn.jsdelivr.net/gh/0zl/mostima@master/dspr/r1-0528.yaml')
+            v3_0324: await fetchYAML('/dspr/v3-0324.yaml'),
+            r1_0528: await fetchYAML('/dspr/r1-0528.yaml')
         }
 
         const calculated = {
             v3_0324: [],
             r1_0528: []
         }
-
-        document.getElementById('last-updated').innerText = await getRepoLastCommitUpdateDate();
 
         // ----- //
 
